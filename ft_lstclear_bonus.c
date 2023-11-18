@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 22:18:48 by ayel-mou          #+#    #+#             */
-/*   Updated: 2023/11/18 23:11:16 by ayel-mou         ###   ########.fr       */
+/*   Created: 2023/11/18 00:18:51 by ayel-mou          #+#    #+#             */
+/*   Updated: 2023/11/18 00:40:47 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	char			*ptr;
-	unsigned int	index;
-	unsigned int	len;
+	t_list	*node_del;
+	t_list	*tmp;
 
-	if (!s || !f)
-		return ;
-	len = ft_strlen(s);
-	index = 0;
-	ptr = (char *)malloc((len + 1) * sizeof(char));
-	if (ptr == NULL)
-		return (NULL);
-	while (index < len)
+	node_del = *lst;
+	if (lst != NULL && del != NULL)
 	{
-		ptr[index] = (*f)(index, s[index]);
-		index++;
+		while (node_del != NULL)
+		{
+			tmp = node_del->next;
+			if (node_del->content != NULL)
+			{
+				del(node_del->content);
+			}
+			free(node_del);
+			node_del = tmp;
+		}
 	}
-	ptr[index] = '\0';
-	return (ptr);
+	*lst = '\0';
 }
