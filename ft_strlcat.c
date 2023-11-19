@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 17:42:39 by ayel-mou          #+#    #+#             */
-/*   Updated: 2023/11/18 23:10:33 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2023/11/19 22:30:49 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	j;
 
-	if (!src && !dstsize)
-		return (0);
+	if (!dest && dstsize == 0)
+		return (ft_strlen(src));
 	len_dest = ft_strlen(dest);
 	len_src = ft_strlen(src);
 	i = len_dest;
