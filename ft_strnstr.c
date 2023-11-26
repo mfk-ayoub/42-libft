@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:28:00 by ayel-mou          #+#    #+#             */
-/*   Updated: 2023/11/19 22:07:01 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2023/11/25 17:34:01 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		j = 0;
 		while (big[i + j] == little[j] && (i + j) < len)
 		{
-			if (big[i + j] == '\0' && little[j] == '\0')
+			if (big[i + j] == '\0' || little[j] == '\0')
 				return ((char *)&big[i]);
 			j++;
 		}

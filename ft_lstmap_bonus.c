@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 22:15:15 by ayel-mou          #+#    #+#             */
-/*   Updated: 2023/11/19 22:23:43 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2023/11/19 23:09:17 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&new, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&new, temp);
+		ft_lstadd_back(&new, swi);
 		lst = lst->next;
 	}
 	return (new);

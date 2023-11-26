@@ -6,9 +6,10 @@
 #    By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:03:01 by ayel-mou          #+#    #+#              #
-#    Updated: 2023/11/26 18:29:10 by ayel-mou         ###   ########.fr        #
+#    Updated: 2023/11/26 19:13:35 by ayel-mou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME = libft.a
 
@@ -41,7 +42,6 @@ $(NAME): $(OBJ)
 %.o : %.c
 	$(CC) $(CFLAGS) -c $<
 	ar -rc $(NAME) $@
-
 bonus: $(OBJB)
 
 clean:
@@ -51,3 +51,4 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+

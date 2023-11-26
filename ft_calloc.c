@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:01:36 by ayel-mou          #+#    #+#             */
-/*   Updated: 2023/11/19 22:34:10 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2023/11/22 01:22:10 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,15 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t	total;
 	size_t	i;
 
-	if (count != 0 && size > 4294967295 / count)
-		return (NULL);
 	total = count * size;
 	if (total == 0)
-		return (malloc(0));
+	{
+		ptr = malloc(1);
+		ptr[0] = 0;
+		return ((void *)ptr);
+	}
+	if (count != 0 && total / count != size)
+		return (NULL);
 	ptr = malloc(total);
 	if (ptr == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 20:07:46 by ayel-mou          #+#    #+#             */
-/*   Updated: 2023/11/06 20:57:53 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2023/11/25 17:50:38 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (*s != '\0')
+	if (s && fd >= 0)
 		write(fd, s, ft_strlen(s));
 }

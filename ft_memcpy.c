@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 20:56:28 by ayel-mou          #+#    #+#             */
-/*   Updated: 2023/11/19 22:29:54 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2023/11/26 15:45:05 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ void	*ft_memcpy(void *to, const void *from, size_t n)
 		return (NULL);
 	ptr = to;
 	str = (unsigned char *)from;
+	if (ptr == str)
+	{
+		return (ptr);
+	}
 	i = 0;
 	while (i < n)
 	{
