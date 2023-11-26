@@ -6,7 +6,7 @@
 #    By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:03:01 by ayel-mou          #+#    #+#              #
-#    Updated: 2023/11/19 22:18:50 by ayel-mou         ###   ########.fr        #
+#    Updated: 2023/11/26 18:29:10 by ayel-mou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,12 +37,13 @@ CC = cc
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-$(OBJB): $(SRCB)
-	$(CC) $(CFLAGS) -c $(SRCB)
-	ar -rc $(NAME) $(OBJB)
+
+%.o : %.c
+	$(CC) $(CFLAGS) -c $<
+	ar -rc $(NAME) $@
+
 bonus: $(OBJB)
-	 
+
 clean:
 	rm -f $(OBJ) $(OBJB)
 
