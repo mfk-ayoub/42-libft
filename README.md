@@ -89,8 +89,8 @@ In order to validate your project and have it accepted, you must at least do bot
 
 ## Contact Me
 
-* [Twitter][_1]
+* [x][_1]
 * [Instagram][_2]
 
-[_1]: https://twitter.com/ayoub_elmouafik
-[_2]: https://www.instagram.com/ayoubmfk20
+[_1]: https://x.com/ayoub_elmouafik
+[_2]: https://www.instagram.com/ayoub_mfk20
