@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
@@ -37,3 +38,56 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new);
 }
+
+/*
+void *putstr(void *content)
+{
+	printf ("\n%s\n", (char *)content);
+}
+
+void del(void *content)
+{
+	free(content);
+}
+
+void dele(void *content)
+{
+    if (content)
+    {
+        free(content);
+    }
+}
+
+
+int main(void)
+{
+	t_list *test;
+
+	test = NULL;
+	t_list *test1 = ft_lstnew(ft_strdup("ayoub"));
+	t_list *test2 = ft_lstnew(ft_strdup("obito"));
+	t_list *test3 = ft_lstnew(ft_strdup("elmfk"));
+	ft_lstadd_back(&test, test2);
+	ft_lstadd_back(&test, test3);
+	ft_lstadd_front(&test, test1);
+
+	int size;
+	size = ft_lstsize(test);
+	printf ("%d", size);
+	
+	t_list *testmap = ft_lstmap(test,putstr,del);
+	ft_lstdelone(test3,dele);
+	test2->next = NULL;
+	printf ("\nafter deleone\n");
+
+	t_list *tmp;
+	tmp = test;
+
+	while (tmp)
+	{
+		printf ("%s\n",(char *)tmp->content);
+		tmp = tmp->next;
+	}
+	
+}
+*/
