@@ -107,6 +107,6 @@ char	**ft_split(char const *s, char c)
 		free(str);
 		return (NULL);
 	}
-	str[words] = '\0';
+	str[words] = NULL;
 	return (str);
 }
